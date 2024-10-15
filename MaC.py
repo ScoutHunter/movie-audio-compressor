@@ -29,13 +29,29 @@ def select_audio_track(input_file):
     audio_tracks = get_audio_tracks(input_file)
     if len(audio_tracks) == 1:
         return "0:a:0"
+
     print(f"\nMultiple audio tracks available for {os.path.basename(input_file)}:")
+
+    track_info = []
     for i, track in enumerate(audio_tracks):
-        print(f" {i}: {track.get('tags', {}).get('language', 'Unknown')} - {track.get('codec_name', 'Unknown codec')}")
+        info = [
+            f"{i}: {track.get('tags', {}).get('title', f'Track {i+1}')}",
+            track.get('tags', {}).get('language', 'Unknown'),
+            track.get('codec_name', 'Unknown codec'),
+            f"{int(track.get('bit_rate', 0)) // 1000}k" if track.get('bit_rate') else 'Unknown',
+            track.get('channel_layout', 'Unknown layout')
+        ]
+        track_info.append(info)
+
+    col_widths = [max(len(str(row[i])) for row in track_info) for i in range(len(track_info[0]) - 1)]
+
+    for row in track_info:
+        print("  " + " | ".join(f"{str(item):<{col_widths[i]}}" if i < len(col_widths) else str(item) for i, item in enumerate(row)))
+
     while True:
         try:
             selection = int(input("\nPlease select audio track number: "))
-            print()
+            print()  # Restored extra print
             if 0 <= selection < len(audio_tracks):
                 return f"0:a:{selection}"
             print("Invalid selection. Please try again.")
