@@ -112,7 +112,7 @@ def main():
         os.system(f'mode con: cols={CONFIG["CONSOLE_COLS"]} lines={CONFIG["CONSOLE_LINES"]}' if os.name == 'nt' else f'\x1b[8;{CONFIG["CONSOLE_LINES"]};{CONFIG["CONSOLE_COLS"]}t')
 
         if len(sys.argv) < 2:
-            print("Usage: Drag and drop one or more files directly on the script.")
+            print("Usage: Drag and drop one or more files directly onto the script.")
             sys.exit()
 
         valid_files = get_valid_files(sys.argv[1:])
