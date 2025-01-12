@@ -7,7 +7,7 @@ _Note: Original file format and subtitles are preserved, video track remains unt
 ## Requirements
 
 - [Python 3.6+](https://www.python.org/downloads/)
-- [FFmpeg](https://www.ffmpeg.org/download.html)
+- [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) ([Add to PATH](https://phoenixnap.com/kb/ffmpeg-windows))
 - [colorama](https://pypi.org/project/colorama/) `pip install colorama`
 
 ## Usage
