@@ -12,7 +12,7 @@ _Note: Original file format and subtitles are preserved, video track remains unt
 
 ## Usage
 
-1. Drag and drop file(s) directly onto the script (files that don't include an audio stream are ignored)
+1. Drag and drop file(s) directly onto the script (files that don't include an audio stream will be ignored)
 2. Select audio track (if multiple are available)
 3. Choose output directory
 
