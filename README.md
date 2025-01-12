@@ -1,6 +1,6 @@
 # Movie Audio Compressor (MaC)
 
-A Python script to quickly compress the audio dynamic range of video files, preventing large volume fluctuations (e.g., when playing a movie at night, or at low volume).
+A Python script to quickly compress the audio dynamic range of video files, preventing large volume fluctuations (e.g., to play a movie at night, or at low volume).
 
 _Note: Original file format and subtitles are preserved, video track remains untouched_
 
